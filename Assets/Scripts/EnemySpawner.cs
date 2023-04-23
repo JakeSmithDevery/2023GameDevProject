@@ -29,5 +29,4 @@ public class EnemySpawner : ObjectHealth
             CancelInvoke("SpawnEnemy");
         }
     }
-
 }
