@@ -11,12 +11,7 @@ public class EnemyHealth : ObjectHealth
 
     public override void HandleCollision(GameObject otherObject)
     {
-        if (otherObject.CompareTag("Bullet"))
-        {
-            Bullet b = otherObject.GetComponent<Bullet>();
-            SubtractHealth(b.Damage);
-        }
-        base.HandleCollision(otherObject);
+
     }
 
     public override void OnDeath()
