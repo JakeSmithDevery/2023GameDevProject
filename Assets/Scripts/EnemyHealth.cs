@@ -11,7 +11,6 @@ public class EnemyHealth : ObjectHealth
 
     public override void HandleCollision(GameObject otherObject)
     {
-
     }
 
     public override void OnDeath()
