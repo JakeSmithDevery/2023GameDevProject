@@ -14,10 +14,10 @@ public class EnemySpawner : ObjectHealth
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnZombie", 2, 5);
+        InvokeRepeating("SpawnEnemy", 2, 5);
     }
 
-    void SpawnZombie()
+    void SpawnEnemy()
     {
         Vector3 randomPosition = Random.insideUnitCircle * SpawnArea;
 
@@ -26,7 +26,7 @@ public class EnemySpawner : ObjectHealth
 
         if (numberOfZombiesSpawned >= MaxZombiesToSpawn)
         {
-            CancelInvoke("SpawnZombie");
+            CancelInvoke("SpawnEnemy");
         }
     }
 }
