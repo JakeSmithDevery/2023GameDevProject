@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &343950219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343950220}
+  m_Layer: 7
+  m_Name: PointAbovePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343950220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343950219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.693, y: 0.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5879596842555728754}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5879596842555728766
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +44,8 @@ GameObject:
   - component: {fileID: 5879596842555728752}
   - component: {fileID: 5879596842555728767}
   - component: {fileID: 5879596842555728755}
-  m_Layer: 0
+  - component: {fileID: -8612501354470323266}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -31,7 +63,8 @@ Transform:
   m_LocalPosition: {x: -0.14, y: -2.86, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 343950220}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -116,10 +149,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 1.2
+  m_Material: {fileID: 6200000, guid: c65f25e133e9bc34a9ff86679eec0f40, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -136,11 +169,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6677f7358ca6a52499e94604dac2d54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 800
+  MovementSpeed: 400
   AirMovementSpeed: 200
   JumpForce: 10
   isOnGround: 0
   MaxSlope: 0.5
   MaxJumps: 2
   CollectableCount: 0
-  MaxMovementSpeed: 10
+  MaxMovementSpeed: 20
+  doesWantToDropDown: 0
+--- !u!114 &-8612501354470323266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5879596842555728766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71e92bd4359c394fa936b0ec7ad6ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CustomCursorImage: {fileID: 2800000, guid: 5aa56704f3c702c419a25523b3de26d0, type: 3}

@@ -3,7 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - tp
+  - switch
+  - door
+  - wall
+  - Floor
+  - Death
+  - Checkpoint
+  - EndChase
+  - StartPoint
+
+  - end_lvl
+
+  - Change level
+
   layers:
   - Default
   - TransparentFX
@@ -11,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - wall
   - 
   - 
   - 
@@ -40,4 +54,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 2606408731
+    locked: 0
+  - name: foreground
+    uniqueID: 3168338779
     locked: 0

@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public float MaxMovementSpeed = 10;
 
-    void Start()
+
+    protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
         checkpointPosition = transform.position;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
@@ -83,22 +84,22 @@ public class Player : MonoBehaviour
         body.velocity = Vector2.ClampMagnitude(body.velocity, MaxMovementSpeed);
     }
 
-    bool CanJump()
+    protected virtual bool CanJump()
     {
         return isOnGround || currentJumps < MaxJumps;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual private void OnCollisionEnter2D(Collision2D collision)
     {
         CheckIfOnGround(collision);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual private void OnTriggerEnter2D(Collider2D collision)
     {
 
     }
 
-    void CheckIfOnGround(Collision2D collision)
+    protected virtual void CheckIfOnGround(Collision2D collision)
     {
         if (!isOnGround)
             if (collision.contacts.Length > 0)
